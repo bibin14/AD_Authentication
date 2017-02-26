@@ -11,6 +11,19 @@ namespace AD_Authentication
 {
     public partial class MainForm : Form
     {
+
+        public string loggedInUser
+        {
+            get
+            {
+                return this.lblLogin.Text;
+            }
+            set
+            {
+                this.lblLogin.Text = value;
+            }
+        }
+
         public MainForm()
         {
             InitializeComponent();

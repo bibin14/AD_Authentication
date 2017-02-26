@@ -18,11 +18,15 @@ namespace AD_Authentication
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
+            MainForm _mainFrm = new AD_Authentication.MainForm();
+            _mainFrm.loggedInUser = "";
             if (comboBoxADMethod.Text=="Using LDAP Bind")
 	        {
                if (AD.validateUserByBind(this.textBoxUName.Text, this.textBoxPwd.Text) == true)
                {
                     MessageBox.Show("Logged in successfully", "Login");
+                    // bind the loggedin user id
+                    _mainFrm.loggedInUser = "Logged in as " + this.textBoxUName.Text.ToUpper();
                     this.Close();
                 }
 
@@ -32,6 +36,8 @@ namespace AD_Authentication
                 if (AD.validateUser(this.textBoxUName.Text, this.textBoxPwd.Text) == true)
                 {
                     MessageBox.Show("Logged in successfully", "Login");
+                    // bind the loggedin user id
+                    _mainFrm.loggedInUser = "Logged in as " + this.textBoxUName.Text.ToUpper();
                     this.Close();
                 }
 
