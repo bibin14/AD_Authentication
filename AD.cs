@@ -16,10 +16,10 @@ namespace AD_Authentication
         /// Active Directory Server/Domain
         /// </summary>
         private static string domain = "AD.com";
-  
+
         /// <summary>
         /// This method is to validate user in a traditional-way using System.DirectoryServices
-         /// </summary>
+        /// </summary>
         /// <param name="userName">Username</param>
         /// <param name="password">Password</param>
         /// <returns>true if the credentials are valid, false otherwise</returns>
@@ -50,7 +50,7 @@ namespace AD_Authentication
                 return false;
             }
 
-                              
+
 
         }
 
@@ -66,7 +66,7 @@ namespace AD_Authentication
         {
             bool result = true;
             var credentials = new NetworkCredential(userName, password);
-            var serverId = new LdapDirectoryIdentifier(domain); 
+            var serverId = new LdapDirectoryIdentifier(domain);
 
             var conn = new LdapConnection(serverId, credentials);
             try
@@ -114,5 +114,49 @@ namespace AD_Authentication
             }
         }
 
+        /// <summary>
+        /// This method is to retrive all users from AD
+        /// </summary>
+        public List<Users> GetADUsers()
+        {
+            List<Users> lstADUsers = new List<Users>();
+            try
+            {
+                DirectoryEntry searchRoot = new DirectoryEntry(domain);
+                DirectorySearcher search = new DirectorySearcher(searchRoot);
+                search.Filter = "(&(objectClass=user)(objectCategory=person))";
+                search.PropertiesToLoad.Add("samaccountname");
+                search.PropertiesToLoad.Add("mail");
+                search.PropertiesToLoad.Add("usergroup");
+                search.PropertiesToLoad.Add("displayname");
+                SearchResult result;
+                SearchResultCollection resultCol = search.FindAll();
+                if (resultCol != null)
+                {
+                    for (int counter = 0; counter < resultCol.Count; counter++)
+                    {
+                        string UserNameEmailString = string.Empty;
+                        result = resultCol[counter];
+                        if (result.Properties.Contains("samaccountname") &&
+                                 result.Properties.Contains("mail") &&
+                            result.Properties.Contains("displayname"))
+                        {
+                            Users objSurveyUsers = new Users();
+                            objSurveyUsers.Email = (String)result.Properties["mail"][0] +
+                              "^" + (String)result.Properties["displayname"][0];
+                            objSurveyUsers.UserName = (String)result.Properties["samaccountname"][0];
+                            objSurveyUsers.DisplayName = (String)result.Properties["displayname"][0];
+                            lstADUsers.Add(objSurveyUsers);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+                return lstADUsers;
+
+        }
     }
 }
