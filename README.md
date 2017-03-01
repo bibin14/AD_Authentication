@@ -1,6 +1,10 @@
 # AD_Authentication
 Authenticate Users Againts Active Directory
+<br/>
 
+<img src='https://lh3.googleusercontent.com/fNlbpxKLA8MCwPQBYTjiOyROoyYXVCOo8jOExH1bWjKr3UXusFmiczFGlrfEFvYf4tjTbGP0SBK3mAAzROr4W7ytoxGvc8Nj5AbvhTf5o962cpEcqceUBQ6REYEBnCmEz5gmUUwPJKlUQby4FVcbDtCJ-gIoim2DOZF2wgWT6bUD_VPSQo9pQ31_Bq3JlHtc71n8ViAx9xQtjm4yo59zklpwvkEvquMhd4_Nyn_pGzYw5Y-jS6WhKU1UTi2Nws7a2F1dISvCBQqVkjTG3rbtDXJSoL5eI5DFKYILuVGezokcU0ljbb_rDAeCRfa4lKvED8EXLlwuSUTDIuhqq-Kn6o5k8dSz0-tOb_Ch60Umb-yez4qhv2rfxsVtfhVUi4e9x1RnmX4lXY_O8bC1Xid1EvtvRheprjbuGzNJjyyXQXv4lAaGDiVdUvUfCxcJx4MD6nqnKhfXeHxZ2ICMP6Xb_pYHYS_qV-xYGp-th6UlqQMmOHL5fUFgIbyxR6Fe0MRi2j9SYDN0bs0pWI-jc5koQxiUEuaqSQDA_e1CcxZf0yl11iE4UT1TOb7tupNKkvaK-WKMePsAyasvItmahTy4vm8F3xf3XdAM7IsNZPLBfc0mnqhgqwAnZOjRz6RQ27PSE6wY124VLfYXgXPs-Rn_8Gh6Gq83AbOPICNOuLMOqg=w720-h553-no'></img>
+
+<br/>
 This project is to demonstrate options to authenticate domin users against the active directory. I have included two different methods for user authentication.
 <br/><br/>
 1) Using DirectorySearcher<br/>
