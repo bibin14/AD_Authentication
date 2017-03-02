@@ -37,7 +37,8 @@ namespace AD_Authentication
 
         private void btnGetUsers_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Not Implemented !!!", "Work in progress");
+            ADUsersForm _adUsers = new ADUsersForm();
+            _adUsers.ShowDialog(this);
         }
 
         private void btnGetUserDetails_Click(object sender, EventArgs e)
