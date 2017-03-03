@@ -122,8 +122,7 @@ namespace AD_Authentication
             List<Users> lstADUsers = new List<Users>();
             try
             {
-                DirectoryEntry searchRoot = new DirectoryEntry(domain);
-                DirectorySearcher search = new DirectorySearcher(searchRoot);
+                DirectorySearcher search = new DirectorySearcher();
                 search.Filter = "(&(objectClass=user)(objectCategory=person))";
                 search.PropertiesToLoad.Add("samaccountname");
                 search.PropertiesToLoad.Add("mail");
@@ -155,7 +154,7 @@ namespace AD_Authentication
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-                return lstADUsers;
+            return lstADUsers;
 
         }
     }

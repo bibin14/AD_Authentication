@@ -133,4 +133,7 @@
   <data name="_1487692439_preferences_contact_list" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1487692439_preferences-contact-list.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="user_img" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user_img.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
