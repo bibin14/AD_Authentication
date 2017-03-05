@@ -145,6 +145,7 @@ namespace AD_Authentication
                               "^" + (String)result.Properties["displayname"][0];
                             objSurveyUsers.UserName = (String)result.Properties["samaccountname"][0];
                             objSurveyUsers.DisplayName = (String)result.Properties["displayname"][0];
+                            objSurveyUsers.isMapped = true;
                             lstADUsers.Add(objSurveyUsers);
                         }
                     }

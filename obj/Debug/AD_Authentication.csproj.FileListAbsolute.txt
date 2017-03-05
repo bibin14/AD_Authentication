@@ -16,3 +16,4 @@ C:\Users\bibin_000\Documents\GitHub\AD_Authentication\AD_Authentication\bin\Debu
 C:\Users\bibin_000\Documents\GitHub\AD_Authentication\AD_Authentication\obj\Debug\AD_Authentication.exe
 C:\Users\bibin_000\Documents\GitHub\AD_Authentication\AD_Authentication\obj\Debug\AD_Authentication.pdb
 C:\Users\bibin_000\Documents\GitHub\AD_Authentication\AD_Authentication\obj\Debug\AD_Authentication.ADUsersForm.resources
+C:\Users\bibin_000\Documents\GitHub\AD_Authentication\AD_Authentication\obj\Debug\AD_Authentication.csprojResolveAssemblyReference.cache
