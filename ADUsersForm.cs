@@ -25,9 +25,12 @@ namespace AD_Authentication
             {
                 Button btnUser = new Button();
                 btnUser.Text = _user.DisplayName;
+                btnUser.Tag = _user.Email;
+                btnUser.Name = _user.UserName;  
                 btnUser.Size = new System.Drawing.Size(100, 100);
                 btnUser.Image = global::AD_Authentication.Properties.Resources.user_img;
                 btnUser.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+                btnUser.Click += new System.EventHandler(OnbtnUserClick);
                 this.flowLayoutPanel1.Controls.Add(btnUser);
                 
                 /// To load only 250 users
@@ -38,5 +41,12 @@ namespace AD_Authentication
             }
 
         }
+
+        void OnbtnUserClick(object sender, EventArgs e)
+        {
+            UserDetailsForm usrDt = new UserDetailsForm(((Button)sender).Name, ((Button)sender).Text, ((Button)sender).Tag.ToString());
+            usrDt.ShowDialog(this);
+        }
+
     }
 }
