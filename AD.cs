@@ -158,5 +158,39 @@ namespace AD_Authentication
             return lstADUsers;
 
         }
+
+        public Users GetADUser(string DomainID)
+        {
+           Users adUsers = new Users();
+            try
+            {
+                DirectorySearcher search = new DirectorySearcher();
+                search.Filter = "(&(objectClass=user)(samaccountname=" + DomainID + "))";
+                search.PropertiesToLoad.Add("samaccountname");
+                search.PropertiesToLoad.Add("mail");
+                search.PropertiesToLoad.Add("usergroup");
+                search.PropertiesToLoad.Add("displayname");
+                SearchResult result = search.FindOne();
+                if (result != null)
+                {
+                    if (result.Properties.Contains("samaccountname") &&
+                                 result.Properties.Contains("mail") &&
+                            result.Properties.Contains("displayname"))
+                    {
+                        adUsers.Email = (String)result.Properties["mail"][0] +
+                          "^" + (String)result.Properties["displayname"][0];
+                        adUsers.UserName = (String)result.Properties["samaccountname"][0];
+                        adUsers.DisplayName = (String)result.Properties["displayname"][0];
+                        adUsers.isMapped = true;
+                   }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return adUsers;
+
+        }
     }
 }
