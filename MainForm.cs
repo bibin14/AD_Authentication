@@ -43,7 +43,8 @@ namespace AD_Authentication
 
         private void btnGetUserDetails_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Not Implemented !!!", "Work in progress");
+            UserSearchForm _usrSrch = new UserSearchForm();
+            _usrSrch.ShowDialog(this);
         }
     }
 }

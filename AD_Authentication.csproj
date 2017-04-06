@@ -89,6 +89,12 @@
       <DependentUpon>UserDetailsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Users.cs" />
+    <Compile Include="UserSearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserSearchForm.Designer.cs">
+      <DependentUpon>UserSearchForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ADUsersForm.resx">
       <DependentUpon>ADUsersForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,6 +116,9 @@
     </Compile>
     <EmbeddedResource Include="UserDetailsForm.resx">
       <DependentUpon>UserDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserSearchForm.resx">
+      <DependentUpon>UserSearchForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
